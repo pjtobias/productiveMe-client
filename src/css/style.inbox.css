@@ -1,0 +1,825 @@
+
+/*
+  color palette
+    #6F6FD8 - main - purple
+    #98CE00 - 2nd - yellow green
+    #89A6FB - 3rd - little boy blue
+    #78C3FB - 4th - maya blue
+    #16E0BD - 5th - turqouise
+*/
+
+/*font-family: 'Kodchasan', sans-serif;*/
+/*font-family: 'Rowdies', cursive;*/
+
+.containerInboxPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /*background-color: red;*/
+}
+
+
+.subSecInboxPage-1 {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  /*background-color: blue;*/
+}
+
+    .subSecInboxPage-1a {
+      width: 49%;
+      /*background-color: yellowgreen;*/
+    }
+
+    .subSecInboxPage-1b {
+      width: 49%;
+      /*background-color: greenyellow;*/
+    }
+
+
+.subSecInboxPage-2 {
+  width: 98%;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  /*background-color: green;*/
+}
+
+    .subSecInboxPage-2a {
+      width: 25%;
+      border-right: 2px solid #6F6FD8;
+      border-top: 2px solid #6F6FD8;
+      border-bottom: 2px solid #6F6FD8;
+      
+      -webkit-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+      /*background-color: orange;*/
+    }
+
+        .subSecInboxPage-2aa {
+          width: 100%;
+          height: 5vh;
+          border-bottom: 2px solid #6F6FD8;
+
+          display: flex;
+          align-items: center;
+
+
+          /*background-color: violet;*/
+        }
+
+            .subSecInboxPage-2ab-text01 {
+              font-family: 'Rowdies', cursive;
+              font-size: 25px;
+              color: #6F6FD8;
+              margin: 0 0 0 20px;
+            }
+
+        .subSecInboxPage-2ab {
+          width: 100%;
+          height: 35vh;
+          overflow: auto;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          /*background-color: blueviolet;*/
+        }
+
+            .subSecInboxPage-2ab-btn {
+              width: 90%;
+              height: 30px;
+              margin: 0 auto 5px;
+              color:  white;
+              border: none;
+              border-radius: 50px;
+              background-color: #6F6FD8;
+            }
+
+            .subSecInboxPage-2ab-btn:hover {
+              color: #6F6FD8;
+              border: 2px solid #6F6FD8;
+              border-radius: 50px;
+              background-color: white;
+            }
+
+
+        .subSecInboxPage-2ac {
+          width: 100%;
+          height: 5vh;
+          border-top: 2px solid #6F6FD8;
+          border-bottom: 2px solid #6F6FD8;
+
+          display: flex;
+          align-items: center;
+          /*background-color: violet;*/
+        }
+
+        .subSecInboxPage-2ad {
+          width: 100%;
+          height: 35vh;
+          /*border-bottom: 2px solid #6F6FD8;*/
+          overflow: auto;
+          /*background-color: darkviolet;*/
+        }
+
+    .subSecInboxPage-2b {
+      width: 75%;
+      /*border-right: 2px solid #6F6FD8;*/
+      /*border-bottom: 2px solid #6F6FD8;*/
+
+      /*background-color: blue;*/
+    }
+
+        .subSecInboxPage-2ba {
+          width: 100%;
+          height: 7vh;
+          border-top: 2px solid #6F6FD8;
+          border-bottom: 2px solid #6F6FD8;
+          border-right: 2px solid #6F6FD8;
+
+          -webkit-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /*background-color: cornflowerblue;*/
+        }
+
+            .subSecInboxPage-2ba-text01 {
+              font-family: 'Rowdies', cursive;
+              font-size: 25px;
+              color: #6F6FD8;
+              margin: 0 0 0 20px;
+            }
+
+
+        .subSecInboxPage-2bb {
+          width: 100%;
+          height: 73vh;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          /*background-color: pink;*/
+        }
+
+
+            .subSecInboxPage-2bba {
+              width: 80%;
+              height: 73vh;
+              /*background-color: deeppink;*/
+            }
+
+
+
+                .subSecInboxPage-2bbaa {
+                  width: 100%;
+                  height: 63vh;
+                  overflow: auto;
+                  /*overflow: visible;*/
+
+                  display: flex;
+                  flex-direction: column-reverse;
+                  /*justify-content: end;*/
+                  /*background-color: deeppink;*/
+                }
+
+                .subSecInboxPage-2bbab {
+                  width: 100%;
+                  height: 10vh;
+
+                  /*border-top: 2px solid #6F6FD8;*/
+                  /*border-bottom: 2px solid #6F6FD8;*/
+                  /*border-right: 2px solid #6F6FD8;*/
+
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  /*background-color: blueviolet;*/
+                }
+
+                    .subSecInboxPage-2bbaba {
+                      width: 80%;
+                      /*height: 90vh;*/
+                      
+                      border: 2px solid #6F6FD8;
+                      border-radius: 50px;  
+
+                      -webkit-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+                      -moz-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+                      box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                      align-items: center;
+                      /*background-color: blueviolet;*/
+                    }
+
+                        .subSecInboxPage-2bbaba-textbox {
+                          width: 70%;
+                          height: 6vh;
+                          padding-left: 15px;
+                          padding-right: 15px;
+                          border: none;
+
+                          /*border: 2px solid #6F6FD8;
+                          border-radius: 50px;*/
+                          /*background-color: red;*/
+                        }
+
+                            .subSecInboxPage-2bbaba-textbox:active {
+                              border: none;
+                            }
+
+                        .subSecInboxPage-2bbaba-btn {
+                          width: 18%;
+                          height: 5vh;
+
+                          color:  white;
+                          border: none;
+                          border-radius: 50px;
+                          background-color: #6F6FD8;
+                        }
+
+                        .subSecInboxPage-2bbaba-btn:hover {
+                          color:  #6F6FD8;
+                          border: 2px solid #6F6FD8;
+                          border-radius: 50px;
+                          background-color: white;
+                        }
+
+
+            .subSecInboxPage-2bbb {
+              width: 20%;
+              height: 72vh;
+
+              border-left: 2px solid #6F6FD8;
+              border-bottom: 2px solid #6F6FD8;
+              border-right: 2px solid #6F6FD8;
+
+              -webkit-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+              -moz-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+              box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+              /*background-color: gold;*/
+            }
+
+                .subSecInboxPage-2bbba {
+                  width: 100%;
+                  height: 5vh;
+
+                  border-bottom: 2px solid #6F6FD8;
+
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  /*background-color: yellowgreen;*/
+                }
+
+                    .subSecInboxPage-2bbba-text01 {
+                      font-family: 'Rowdies', cursive;
+                      font-size: 25px;
+                      color: #6F6FD8;
+                    }
+
+                .subSecInboxPage-2bbbb {
+                  width: 100%;
+                  height: 60vh;
+
+                  /*background-color: greenyellow;*/
+                }
+
+                .subSecInboxPage-2bbbc {
+                  width: 100%;
+                  height: 7vh;
+
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  /*border-top: 2px solid #6F6FD8;*/
+                  /*background-color: yellowgreen;*/
+                }
+
+                    .subSecInboxPage-2bbbc-btn {
+                      width: 90%;
+                      height: 30px;
+
+                      color:  white;
+                      border: none;
+                      border-radius: 50px;
+                      background-color: #6F6FD8;
+                    }
+
+                    .subSecInboxPage-2bbbc-btn:hover {
+                      color: #6F6FD8;
+                      border: 2px solid #6F6FD8;
+                      border-radius: 50px;
+                      background-color: white;
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------- ConversationCard ------*/
+
+.containerConversationCard-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+    .conversationCard-btn-1 {
+      width: 90%;
+      height: 4rem;
+      border: none;
+      /*text-decoration: none;*/
+
+    /*  display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;*/
+      background-color: white;
+    }
+
+    .conversationCard-btn-1:hover {
+      /*border-top: 1px solid #98CE00;*/
+      border-bottom: 2px solid #98CE00;
+    }
+
+    /*.conversationCard-btn-1:active {
+      border: 1px solid #98CE00;
+    }*/
+
+    .conversationCard-btn-2 {
+      width: 90%;
+      height: 4rem;
+      border: 2px solid #6F6FD8;
+      /*text-decoration: none;*/
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+    }
+
+    .conversationCard-btn-2:hover {
+      border: 2px solid #98CE00;
+    }
+
+    /*.conversationCard-btn-2:active {
+      border: 1px solid #98CE00;
+    }*/
+
+        .conversationCard-text01 {
+          font-family: 'Kodchasan', sans-serif;
+          font-size: 22px;
+          color: #6F6FD8;
+        }
+
+
+    .conversationCard-btn-3 {
+      width: 10%;
+      height: 4rem;
+      border: none;
+      color: #6F6FD8;
+      font-size: 25px;
+      /*text-decoration: none;*/
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+    }
+
+    .conversationCard-btn-3:hover {
+      border: 2px solid #98CE00;
+    }
+
+
+
+
+
+/*--------- end ConversationCard ------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------- Message Card ---------*/
+.containerMessageCard {
+  width: 100%;
+  height: 90px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: red;*/
+}
+
+    .subSecHolderMessage {
+      width: 90%;
+      height: 100px;
+
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      /*background-color: blue;*/
+    }
+
+    .subSecBubbleChat {
+      width: 100%;
+      /*height: 80px;*/
+      height: auto;
+      margin: 0 0 50px 0;
+
+      /*background-color: green;*/
+    }
+
+        .subSecBubbleChat-1 {
+          width: 100%;
+          height: 30px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /*background-color: pink;*/
+        }
+
+
+        .subSecBubbleChat-2 {
+          width: 100%;
+        }
+
+            .subSecBubbleChat-2a {
+              width: 55%;
+              /*height: 50px;*/
+              border: 2px solid #6F6FD8;
+              border-radius: 10px;
+              padding-left: 20px;
+
+              display: flex;
+              flex-direction: row;
+/*              -webkit-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+              -moz-box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);
+              box-shadow: 20px 20px 40px 1px rgba(0, 0, 0, 0.1);*/
+              /*background-color: orangered;*/
+            }
+
+                .subSecBubbleChat-2aa {
+                  width: 10%;
+                  border-right: 2px solid #6F6FD8;
+                  padding-left: 10px;
+                  /*background-color: orangered;*/
+                }
+
+                .subSecBubbleChat-2ab {
+                  width: 70%;
+                  border-radius: 10px;
+                  padding-left: 10px;
+                  /*background-color: orangered;*/
+                }
+
+        .subSecBubbleChat-3 {
+          width: 100%;
+
+          display: flex;
+          justify-content: right;
+          /*background-color: deeppink;*/
+        }
+
+            .subSecBubbleChat-3a {
+              width: 55%;
+              /*height: 50px;*/
+              border: 2px solid #6F6FD8;
+              border-radius: 10px;
+              padding-left: 20px;
+
+              display: flex;
+              flex-direction: row;
+              /*background-color: orangered;*/
+            }
+
+                .subSecBubbleChat-3aa {
+                  width: 10%;
+                  border-right: 2px solid #6F6FD8;
+                  padding-left: 10px;
+                  /*background-color: orangered;*/
+                }
+
+                .subSecBubbleChat-3ab {
+                  width: 70%;
+                  padding-left: 10px;
+                  /*background-color: orange;*/
+                }
+
+        .subSecBubbleChat-4 {
+          width: 100%;
+
+          display: flex;
+          justify-content: center;
+          /*background-color: deeppink;*/
+        }
+
+            .subSecBubbleChat-4a {
+              width: 50%;
+              /*height: 50px;*/
+              border: 2px solid #98CE00;
+              border-radius: 10px;
+              /*padding-left: 20px;*/
+
+              display: flex;
+              flex-direction: row;
+              /*background-color: orangered;*/
+            }
+
+                .subSecBubbleChat-4aa {
+                  width: 20%;
+                  border-right: 2px solid #98CE00;
+                  
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  /*background-color: orangered;*/
+                }
+
+                .subSecBubbleChat-4ab {
+                  width: 70%;
+                  padding-left: 10px;
+                  /*background-color: orange;*/
+                }
+
+
+
+
+/*------- END Message Card ---------*/
+
+
+
+
+
+
+
+
+
+
+/*------- Contact Card ---------*/
+    /*------- no card js file, just implemented 
+    inside .map of listOfUsers ---------*/
+.containerContactsCard {
+  width: 100%;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  /*background-color: orange;*/
+}
+
+    .contactsCard-btn-01 {
+      width: 100%;
+      height: 30px;
+      margin: 5px 0;
+      /*border-bottom: 1px solid white;*/
+      border: none;
+      background-color: white;
+
+      display: flex;
+      justify-content: left;
+    }
+
+    .contactsCard-btn-01:hover {
+      border-bottom: 3px solid #98CE00;
+    }
+        .contacts-text01 {
+          font-family: 'Kodchasan', sans-serif;
+          font-size: 20px;
+          color: #6F6FD8;
+          margin: 0 0 0 10px;
+        }
+
+    .contactsCard-btn-02 {
+      width: 100%;
+      height: 30px;
+      margin: 5px 0;
+      /*border-bottom: 1px solid white;*/
+      border-top: none;
+      border-bottom: 3px solid #6F6FD8;
+      border-right: none;
+      border-left: none;
+      background-color: white;
+
+      display: flex;
+      justify-content: left;
+    }
+
+    .contactsCard-btn-02:hover {
+      border-bottom: 3px solid #98CE00;
+    }
+
+
+
+
+/*------- END Contact Card ---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------- Add Conversation Modal ---------*/
+    /*ModalAddConversation.js*/
+.containerAddConvoModal {
+  width: 30%;
+  height: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 30px;
+  zIndex: 1000;
+}
+    /*ModalAddConversation.js*/
+.overlayBgAddConvoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  zIndex: 1000;
+}
+
+
+
+.containerAddConvoModalOnInbox {
+
+}
+
+
+.addConvoModal-header {
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  /*background-color: red;*/
+}
+
+    .addConvoModal-header-text01 {
+      /*font-family: 'Kodchasan', sans-serif;*/
+      font-family: 'Rowdies', cursive;
+      font-size: 30px;
+      color: #6F6FD8;
+      margin: 0 0 0 10px;
+    }
+
+
+.addConvoModal-body-form {
+  width: 100%;
+  height: 55%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+
+  /*background-color: pink;*/
+}
+
+    .addConvoModal-textbox01 {
+      width: 70%;
+      height: 30px;
+      margin: 0 0 0 20px;
+    }
+
+        .addConvoModal-body-form-01 {
+          margin: 0 0 0 15px;
+
+          /*background-color: yellowgreen;*/
+        }
+
+            .addConvoModal-body-form-01-text01 {
+              /*font-family: 'Kodchasan', sans-serif;*/
+              font-size: 15px;
+              color: #6F6FD8;
+              margin: 0 0 0 10px;
+            }
+
+        .addConvoModal-body-form-02 {
+          /*background-color: yellow;*/
+        }
+
+            .addConvoModal-btn-body {
+              width: 50%;
+              height: 30px;
+
+              color:  white;
+              border: none;
+              border-radius: 50px;
+              background-color: #6F6FD8;
+            }
+
+            .addConvoModal-btn-body:hover {
+              color: #6F6FD8;
+              border: 2px solid #6F6FD8;
+              border-radius: 50px;
+              background-color: white;
+            }
+
+.addConvoModal-footer {
+  width: 100%;
+  height: 25%;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  /*background-color: deeppink;*/
+}
+
+        .addConvoModal-btn-footer {
+          width: 20%;
+          height: 30px;
+
+          color:  white;
+          border: none;
+          border-radius: 50px;
+          background-color: #6F6FD8;
+        }
+
+        .addConvoModal-btn-footer:hover {
+          color: #6F6FD8;
+          border: 2px solid #6F6FD8;
+          border-radius: 50px;
+          background-color: white;
+        }
+
+
+
+/*------- END Add Conversation Modal ---------*/

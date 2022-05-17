@@ -1,0 +1,199 @@
+/* create new blog form */
+/*
+  color palette
+    #6F6FD8 - main - purple
+    #98CE00 - 2nd - yellow green
+    #89A6FB - 3rd - little boy blue
+    #78C3FB - 4th - maya blue
+    #16E0BD - 5th - turqouise
+*/
+
+/*font-family: 'Kodchasan', sans-serif;*/
+/*font-family: 'Rowdies', cursive;*/
+
+
+.containerContactsPage {
+	width:  100%;
+	/*background-color: red;*/
+}
+
+.subSectionContactsPage-1 {
+	width: 100%;
+  height: 80px;
+	background-color: green;
+}
+
+.subSectionContactsPage-2 {
+	width: 100%;
+  height: 8vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background-color: blue;*/
+}
+
+	.subSectionContactsPage-2-text01 {
+		font-family: 'Rowdies', cursive;
+		font-size: 40px;
+		color: #6F6FD8;
+   }
+
+.subSectionContactsPage-3 {
+	width:  100%;
+	height: 50vh;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/*background-color: greenyellow;*/
+}
+
+	.subSectionContactsPage-3a {
+		width:  25%;
+		height: 50vh;
+		/*background-color: yellow;*/
+		background: url('../images/bgContacts.png') center center/cover no-repeat;
+
+		-webkit-border-radius:30px 30px;
+		-moz-border-radius:30px 30px;
+		border-radius: 30px 30px;
+
+		-webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+		box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+	}
+
+		.subSectionContactsPage-3aa {
+			width:  90%;
+			height: 10vh;
+			/*background-color: red;*/
+			margin: auto;
+		}
+
+	        .subSectionContactsPage-3a-text01 {
+						font-family: 'Rowdies', cursive;
+						font-size: 35px;
+						color: #fff;
+	        }
+
+	        .subSectionContactsPage-3a-text02 {
+						font-family: 'Kodchasan', sans-serif;
+						font-size: 15px;
+						color: #fff;
+	        }
+
+	    .subSectionContactsPage-3ab {
+			width:  100%;
+			height: 25vh;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			/*background-color: deeppink;*/	
+		}
+
+			.subSectionContactsPage-3a-text03 {
+				font-family: 'Kodchasan', sans-serif;
+				font-size: 17px;
+				color: #fff;
+				margin: 0 0 0 50px;
+	        }
+
+	    .subSectionContactsPage-3ac {
+			width:  100%;
+			height: 10vh;
+
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			align-items: center;
+			/*background-color: pink;*/
+		}
+
+			.subSectionContactsPage-3a-text04 {
+				font-family: 'Kodchasan', sans-serif;
+				font-size: 40px;
+				color: #fff;
+				padding: 0 20px;
+	        }
+
+	    .subSectionContactsPage-3ad {
+			width:  100%;
+			height: 5vh;
+			/*background-color: pink;*/
+		}
+
+
+
+	.subSectionContactsPage-3b {
+		width:  50%;
+		height: 50vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/*background-color: orange;*/
+	}
+
+		.subSectionContactsPage-3ba {
+			width:  80%;
+			height: 45vh;
+
+			/*background-color: red;*/
+		}
+
+			.subSectionContactsPage-3ba-btn01 {
+				width: 50%;
+				background-color: #6F6FD8;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				/*margin: 8px 0;*/
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			.subSectionContactsPage-3ba-textbox01 {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			.subSectionContactsPage-3ba-textarea01 {
+				width: 100%;
+				height: 150px;
+				padding: 12px 20px;
+				box-sizing: border-box;
+				border: 2px solid #ccc;
+				border-radius: 4px;
+				background-color: #fff;
+				resize: none;
+			}
+
+			.subSectionContactsPage-3ba-text01 {
+				font-family: 'Kodchasan', sans-serif;
+				font-size: 17px;
+				color: #6F6FD8;
+				margin: 0 0 0 20px;
+			}
+
+
+.subSectionContactsPage-4 {
+	width:  100%;
+	height: 60vh;
+	/*background-color: blueviolet;*/
+}
+
+
+.subSectionContactsPage-5 {
+	width:  100%;
+	height: 60vh;
+	/*background-color: blueviolet;*/
+}

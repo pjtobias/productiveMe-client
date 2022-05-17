@@ -1,0 +1,97 @@
+/*color palette
+#6F6FD8 - main - purple
+#98CE00 - 2nd - yellow green
+#89A6FB - 3rd - little boy blue
+#78C3FB - 4th - maya blue
+#16E0BD - 5th - turqouise*/
+
+
+
+.container-masterplan-nav {
+	width:  13%;
+	/*width: 300px;*/
+	height: 100vh;
+	background-color: #6F6FD8;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+}
+
+	.container-masterplan-nav-a {
+		width:  100%;
+		height: 70px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #98CE00;
+	}
+
+	.container-masterplan-nav-b {
+		width:  100%;
+		background-color: darkblue;
+	}
+
+		.container-masterplan-nav-text01 {
+			font-family: 'Rowdies', cursive;
+			font-size: 25px;
+			color: white;
+	   }
+
+
+
+
+
+
+.container-masterplan-main {
+	margin: 83px 0 0 0;
+	padding: 0;
+}
+
+.container-masterplan-content {
+	width:  100%;
+	display: flex;
+	justify-content: left;
+	/*background-color: red;*/
+}
+
+	.container-masterplan-a-leftside {
+		width:  13%;
+		height: 100vh;
+		background-color: red;
+	}
+
+	.container-masterplan-b-rightside {
+		width:  87%;
+		/*height: 100vh;*/
+		/*background-color: lightyellow;*/
+		margin: 0;
+		padding: 0;
+	}
+
+
+	.rightside-btn {
+		width:  100%;
+		background-color: #6F6FD8;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: left;
+		text-decoration: none;
+		font-size: 16px;
+	}
+
+	.rightside-btn:hover {
+		background-color: #98CE00;
+	}
+
+
+
+
+
+
+
+
+
+
+

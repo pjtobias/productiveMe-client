@@ -1,0 +1,64 @@
+/* create new blog form */
+/*
+color palette
+#6F6FD8 - main - purple
+#98CE00 - 2nd - yellow green
+#89A6FB - 3rd - little boy blue
+#78C3FB - 4th - maya blue
+#16E0BD - 5th - turqouise
+*/
+
+/*font-family: 'Kodchasan', sans-serif;*/
+/*font-family: 'Rowdies', cursive;*/
+
+
+
+.containerUserDetails {
+    width: 100%;
+    height: 100vh;
+    /*background-color: red;*/
+}
+
+.subSectionUserDetails-1 {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    background-color: green;
+}
+
+
+.subSectionUserDetails-2 {
+  width: 100%;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: orange;*/
+}
+
+
+.subSectionUserDetails-3 {
+  width: 100%;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  /*background-color: cornflowerblue;*/
+}
+
+    .subSectionUserDetails-3a {
+        /*background-color: yellowgreen;*/
+        margin: 0 60px;
+    }
+
+    .subSectionUserDetails-3b {
+        width: 1px;
+        background-color: #6F6FD8;
+    }
+
+    .subSectionUserDetails-3c {
+        /*background-color: greenyellow;*/
+        margin: 0 60px;
+    }

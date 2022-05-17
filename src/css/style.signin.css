@@ -1,0 +1,89 @@
+/* create new blog form */
+/*
+  color palette
+    #6F6FD8 - main - purple
+    #98CE00 - 2nd - yellow green
+    #89A6FB - 3rd - little boy blue
+    #78C3FB - 4th - maya blue
+    #16E0BD - 5th - turqouise
+*/
+
+.create {
+  width: 20%;
+  height: 55vh;
+  /*margin: 0 auto;*/
+  text-align: center;
+  padding: 12px 20px;
+  /*margin: 8px 0;*/
+  /*display: inline-block;*/
+  /*border: 1px solid #ccc;*/
+  border-radius: 4px;
+  box-sizing: border-box;
+  /*background-color: deeppink;*/
+}
+.create label {
+  text-align: left;
+  display: block;
+  color: #6F6FD8;
+}
+.create h2 {
+  font-size: 20px;
+  color: #6F6FD8;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+
+
+
+
+
+
+.containerSignInPage {
+  width:  100%;
+  /*background-color: red;*/
+}
+
+.subSectionSignInPage-1 {
+  width: 100%;
+  height: 80px;
+  background-color: green;
+}
+
+.subSectionSignInPage-2 {
+  width: 100%;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: orange;*/
+}
+
+  .subSectionSignInPage-2-text01 {
+    font-family: 'Rowdies', cursive;
+    font-size: 40px;
+    color: #6F6FD8;
+   }
+
+.subSectionSignInPage-3 {
+  width: 100%;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  /*background-color: cornflowerblue;*/
+}
+
+
+
+
+

@@ -1,0 +1,315 @@
+/*color palette
+#6F6FD8 - main - purple
+#98CE00 - 2nd - yellow green
+#89A6FB - 3rd - little boy blue
+#78C3FB - 4th - maya blue
+#16E0BD - 5th - turqouise*/
+
+/* ----------- Modal for Project Page ------------ */
+/* The Modal (background) */
+
+.ContainerForProjectPage {
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+	/*align-items: center;	*/
+	/*height: 100vh;	*/
+}
+
+		.ContainerForProjectPageHeader {
+			width: 97%;
+			display: flex;
+			justify-content: space-between;
+			/*background-color: red;*/
+		}
+
+				.ContainerForProjectPageHeader-a {
+					width: 49%;
+					/*background-color: blue;*/
+				}
+						.containerForProjectPageHeader-aa {
+							width: 100%;
+							/*background-color: deeppink;*/
+						}
+
+						.containerForProjectPageHeader-ab {
+							width: 100%;
+
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							/*background-color: deepskyblue;*/
+						}
+
+								.containerForProjectPageHeader-aba {
+									width: 49%;
+
+									display: flex;
+									flex-direction: row;
+									justify-content: space-evenly;
+									align-items: center;
+									/*background-color: green;*/
+								}
+
+										.buttonForProjectPageA {
+											background: #89A6FB;
+											color: #fff;
+											border: 0;
+											padding: 10px;
+											border-radius: 15px;
+											width:  200px;
+											cursor: pointer;
+										}
+
+										.buttonForProjectPageF {
+											background: #89A6FB;
+											color: #fff;
+											border: 0;
+											padding: 10px;
+											border-radius: 10px;
+											width:  40px;
+											cursor: pointer;
+										}
+
+								.containerForProjectPageHeader-abb {
+									width: 49%;
+
+									display: flex;
+									flex-direction: row;
+									justify-content: space-around;
+									align-items: center;
+									/*background-color: green;*/
+								}
+
+										.containerForProjectPageHeader-abba {
+											border: 1px solid #89A6FB;
+											border-radius: 13px;
+										}
+
+												.buttonForProjectPageG-atoz {
+													background: none;
+													color: #000;
+													border: 0;
+													padding: auto;
+													border-radius: 10px;
+													width:  50px;
+													height:  30px;
+													cursor: pointer;
+												}
+
+												.buttonForProjectPageH-atoz {
+													background: #89A6FB;
+													color: #fff;
+													border: 0;
+													padding: auto;
+													border-radius: 10px;
+													width:  50px;
+													height:  30px;
+													cursor: pointer;
+												}			
+
+				.ContainerForProjectPageHeader-b {
+					width: 49%;
+					display: flex;
+					justify-content: space-evenly;
+					/*background-color: orange;*/
+				}
+
+						.buttonForProjectPageI {
+							background: #fff;
+							color: #000;
+							/*border: 0;*/
+							/*padding: 8px;*/
+							padding: auto;
+							border: 1px solid #000;
+							border-radius: 10px;
+							width:  90px;
+							height:  30px;
+							cursor: pointer;
+							margin: 1px 0 1px 0;
+						}
+
+						.buttonForProjectPageJ {
+							background: #89A6FB;
+							color: #fff;
+							border: 0;
+							padding: auto;
+							border-radius: 10px;
+							width:  90px;
+							height:  30px;
+							cursor: pointer;
+							margin: 1px 0 1px 0;
+						}
+
+
+						.ContainerForProjectPageHeader-b-a {
+							width: 40%;
+							padding: 30px 0 0 0;
+							/*background-color: green;*/
+						}
+
+								.buttonForProjectPageB {
+									background: #89A6FB;
+									color: #fff;
+									border: 0;
+									/*padding: 8px;*/
+									padding: auto;
+									border-radius: 10px;
+									width:  150px;
+									height:  35px;
+									cursor: pointer;
+									margin: 1px 0 1px 0;
+								}
+
+								.buttonForProjectPageC {
+									background: #98CE00;
+									color: #fff;
+									border: 0;
+									/*padding: 8px;*/
+									padding: auto;
+									border-radius: 10px;
+									width:  50px;
+									height:  30px;
+									cursor: pointer;
+									margin: 1px 0 1px 0;
+								}
+
+								.buttonForProjectPageD {
+									background: red;
+									color: #fff;
+									border: 0;
+									/*padding: 8px;*/
+									padding: auto;
+									border-radius: 10px;
+									width:  50px;
+									height:  30px;
+									cursor: pointer;
+									margin: 1px 0 1px 0;
+								}
+
+								.buttonForProjectPageE {
+									background: #fff;
+									color: #000;
+									border: 0;
+									/*padding: 8px;*/
+									padding: auto;
+									border: 1px solid #000;
+									border-radius: 10px;
+									width:  50px;
+									height:  30px;
+									cursor: pointer;
+									margin: 1px 0 1px 0;
+								}
+
+
+
+
+
+
+
+
+.containerItemsProjectCard {
+	display: flex;
+	flex-direction: row;
+	width: 97%;
+	height: 120px;
+	justify-content: space-evenly;
+	border: 1px solid #6F6FD8;
+	padding: 10px 0 10px 0;
+	margin: 5px 10px 0 5px;
+	border-radius: 15px;
+	/*background-color: red;*/
+}
+
+.perItemProjectCard-1 {
+	width: 20%;
+	padding: 0 10px 0 20px;
+	/*background-color: blue;*/
+}
+
+.perItemProjectCard-2 {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	/*background-color: green;*/
+}
+
+.perItemProjectCard-2-1 {
+	width:  27%;
+	padding: 15px 10px 0 10px;
+	/*background-color: green;*/
+}
+
+.perItemProjectCard-2-2 {
+	width: 27%;
+	padding: 15px 10px 0 10px;
+	/*background-color: green;*/
+}
+
+.perItemProjectCard-3 {
+	padding: 5px 0 0 0;
+	/*display: flex;*/
+	/*flex-direction: column;*/
+	/*background-color: violet;*/
+}
+
+.heighttext{
+  height:50px
+}
+
+
+
+
+
+
+
+
+
+
+.containerForUpdateProjectModal {
+	padding: auto;
+	margin: 10px 0;
+	
+}
+
+.formHolderForUpdateProjectModal {
+	display: flex;
+	width: 80%;
+	margin: auto;
+}
+
+.updateProjectItems-1 {
+	order: 1;
+	flex-grow: 1;
+	/*background-color: red;*/
+}
+.updateProjectItems-2 {
+	order: 2;
+	flex-grow: 1;
+	/*background-color: blue;*/
+}
+.updateProjectItems-3 {
+	order: 3;
+	flex-grow: 1;
+	/*background-color: green;*/
+}
+
+.buttonForUpdateProjectModal {
+	background: #89A6FB;
+	color: #fff;
+	border: 0;
+	padding: 10px;
+	border-radius: 15px;
+	width:  200px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* ----------- end Modal for Project Page ------------ */

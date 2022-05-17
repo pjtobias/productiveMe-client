@@ -1,0 +1,427 @@
+/* create new blog form */
+/*
+  color palette
+    #6F6FD8 - main - purple
+    #98CE00 - 2nd - yellow green
+    #89A6FB - 3rd - little boy blue
+    #78C3FB - 4th - maya blue
+    #16E0BD - 5th - turqouise
+*/
+
+/*font-family: 'Kodchasan', sans-serif;*/
+/*font-family: 'Rowdies', cursive;*/
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white; /*rgba(0, 0, 0, .0)*/
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6F6FD8; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #98CE00; 
+}
+
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 83px 0;
+  padding: 0;
+}
+
+.container-forms {
+  width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.textForPageTitles {
+  font-family: 'Rowdies', cursive;
+  font-size: 40px;
+  color: #6F6FD8;
+ }
+
+ .submitButton {
+  width: 50%;
+  background-color: #6F6FD8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  /*margin: 8px 0;*/
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.containerHomePage {
+  width: 100%;
+  /*background-color: red;*/
+}
+
+
+.subSectionHomePage-1 {
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  /*background-color: green;*/
+}
+
+.subSectionHomePage-2 {
+  width: 100%;
+  height: 115vh;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  /*background-color: blue;*/
+  background: url('../images/bgHome.png') center center/cover no-repeat;
+}
+
+    .subSectionHomePage-2a {
+      width: 100%;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /*background-color: yellowgreen;*/
+    }
+            .subSectionHomePage-2a-text01 {
+              font-family: 'Rowdies', cursive;
+              font-size: 60px;
+              color: #fff;
+            }
+
+            .subSectionHomePage-2a-text02 {
+              font-family: 'Kodchasan', sans-serif;
+              font-size: 20px;
+              color: #fff;
+              text-align: center;
+              margin-top: 30px;
+            }
+
+            .subSectionHomePage-2a-button01 {
+              background: #98CE00;
+              color: #fff;
+              border: 0;
+              padding: 10px;
+              border-radius: 30px;
+              width:  300px;
+              height: 50px;
+              cursor: pointer;
+              margin: 50px 10px 0 10px;
+            }
+
+            .subSectionHomePage-2a-button02 {
+              background: none;
+              color: white;
+              border: 4px solid #98CE00;
+              padding: 10px;
+              border-radius: 30px;
+              width:  300px;
+              height: 40px;
+              cursor: pointer;
+              margin: 50px 10px 0 10px;
+            }
+
+
+    .subSectionHomePage-2b {
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      /*background-color: orange;*/
+    }
+
+        .subSectionHomePage-2ba {
+          width: 20%;
+          height: 50vh;
+          /*background-color: yellow;*/
+        }
+
+        .subSectionHomePage-2bb {
+          width: 60%;
+          height: 50vh;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          /*background-color: greenyellow;*/
+        }
+
+            .subSectionHomePage-2bba {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+              /*border: 4px solid #98CE00;*/
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+                .subSectionHomePage-2bba-icons {
+                  /*font-family: 'Baloo Chettan 2', cursive;*/
+                  font-size: 80px;
+                  color: #6F6FD8;
+                  text-align: center;
+                  /*background-color: red;*/
+                }
+
+                .subSectionHomePage-2bba-text01 {
+                  font-family: 'Kodchasan', sans-serif;
+                  font-size: 25px;
+                  color: #6F6FD8;
+                  /*background-color: red;*/
+                }
+
+            .subSectionHomePage-2bbb {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbc {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbd {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbe {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbf {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbg {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .subSectionHomePage-2bbh {
+              width: 210px;
+              height: 210px;
+              margin: 10px;
+              background-color: #fff;
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              -webkit-border-radius:30px 30px;
+              -moz-border-radius:30px 30px;
+              border-radius: 30px 30px;
+              
+              -webkit-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              -moz-box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+              box-shadow: 40px 40px 90px 1px rgba(0, 0, 0, 0.2);
+            }
+
+        .subSectionHomePage-2bc {
+          width: 20%;
+          height: 50vh;
+          margin: 0;
+          /*background-color: lightgreen;*/
+        }
+
+.subSectionHomePage-3 {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+    .subSectionHomePage-3-text01 {
+      font-family: 'Rowdies', cursive;
+      font-size: 40px;
+      text-align: center;
+      color: #6F6FD8;
+    }
+
+    .subSectionHomePage-3-text02 {
+      font-family: 'Kodchasan', sans-serif;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 40px;
+      color: #6F6FD8;
+    }
+/*font-family: 'Kodchasan', sans-serif;*/
+/*font-family: 'Rowdies', cursive;*/
+
+.subSectionHomePage-4 {
+  width: 100%;
+  height: 5vh;
+  background-color: #6F6FD8;
+  display:  flex;
+  justify-content: center;
+}
+
+    .subSectionHomePage-4-text01 {
+      font-family: 'Kodchasan', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+
