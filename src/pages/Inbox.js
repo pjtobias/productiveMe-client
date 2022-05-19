@@ -14,6 +14,8 @@ import { IoIosMore } from "react-icons/io";
 
 
 
+
+
 const Inbox = () => {
 	const { user } = useContext(UserContext)
 
@@ -24,6 +26,7 @@ const Inbox = () => {
 	const [ getAllUsers, setGetAllUsers ] = useState([])
 	const [ getMessages, setGetMessages ] = useState([])
 	const [ whichConvoToShowId, setWhichConvoToShowId ] = useState('')
+	const [ contactsInAConvo, setContactsInAConvo] = useState([])
 
 				// send message //
 	const [ messageBody, setMessageBody ] = useState('')
@@ -48,15 +51,22 @@ const Inbox = () => {
 	const [ contactPersonId, setContactPersonId ] = useState('')
 	const [ convoThisContactBelongToId, setConvoThisContactBelongToId ] = useState('')
 
+	const [ refresh, setRefresh ] = useState(true)
+	const refreshNow = () => {
+		setRefresh(prev => !prev);
+	};
 	
 	
 
 
 
-
+				// modals controls //
 	const [ openAddConversation, setOpenAddConversation ] = useState(false)
 	const openOrCloseAddConversation = () => {
 		setOpenAddConversation(prev => !prev);
+		if( openAddConversation === false ) {
+			setConversationName("")
+		}
 	};
 
 	const [ openUpdateConversation, setOpenUpdateConversation ] = useState(false)
@@ -335,8 +345,7 @@ const Inbox = () => {
 					<button className="contactsCard-btn-02" onClick={() => (
 						setContactPersonName(''),
 						setContactPersonId(''),
-						setConvoThisContactBelongToId(''),
-						consoleLogLang()
+						setConvoThisContactBelongToId('')
 					)}>
 						<span className="contacts-text01">{ewan.firstName} {ewan.lastName}<br /></span>
 					</button>
@@ -344,9 +353,8 @@ const Inbox = () => {
 					<button className="contactsCard-btn-01" onClick={() => (
 						setContactPersonName(ewan.firstName),
 						setContactPersonId(ewan._id),
-						setConvoThisContactBelongToId(whichConvoToShowId),
-						// consoleLogLang()
-						console.log(whichConvoToShowId)
+						setConvoThisContactBelongToId(whichConvoToShowId)
+						// ,console.log(whichConvoToShowId)
 					)}>
 						<span className="contacts-text01">{ewan.firstName} {ewan.lastName}<br /></span>
 					</button>
@@ -357,11 +365,23 @@ const Inbox = () => {
 	})
 //--------------- END Displaying Contact list
 
-	function consoleLogLang() {
-		// console.log(contactPersonName)
-		// console.log(contactPersonId)
-		// console.log(convoThisContactBelongToId)
-	}
+//--------------- Displaying Contacts in a Convo list
+	const contactsToBeShownA = contactsInAConvo.sort((a, b) => {
+		if(a.contactPersonName < b.contactPersonName) {
+			return 1 //element will going to the right
+		} else if (a.contactPersonName > b.contactPersonName) {
+			return -1 //element will going to the left
+		} else {
+			return 0
+		}
+	})
+	const listOfContactsInAConvo = contactsToBeShownA.map(ewan => {
+		return (
+			<span className="contacts-text01">{ewan.contactPersonName}<br /></span>
+
+		)
+	})
+//--------------- END Displaying Contacts in a Convo list
 
 
 
@@ -389,6 +409,8 @@ const Inbox = () => {
  
 
 
+
+
 	useEffect(() => {
 		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getConversationsThruAdminId`, {
 				method: 'POST',
@@ -404,7 +426,7 @@ const Inbox = () => {
 	    	setGetConversations(data)
 	    	// console.log(data)
 	    })
-	}, [])
+	}, [refresh])
 
 
 
@@ -421,7 +443,7 @@ const Inbox = () => {
 	    	setGetAllConversations(data)
 	    	// console.log(data)
 	    })
-	}, [])
+	}, [refresh])
 
 
 	useEffect(() => {
@@ -440,7 +462,7 @@ const Inbox = () => {
 	    	setGetMessages(data)
 	    	// console.log(data)
 	    })
-	}, [whichConvoToShowId])
+	}, [whichConvoToShowId, refresh])
 
 
 	useEffect(() => {
@@ -491,7 +513,24 @@ const Inbox = () => {
 			    })
 			// }
 	    })
-	}, [])
+	}, [refresh])
+
+	useEffect(() => {
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/getListContactInAConvo`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					convoThisContactBelongToId: whichConvoToShowId
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	setContactsInAConvo(data)
+	    	// console.log(data)
+	    })
+	})
 
 
 
@@ -516,33 +555,46 @@ const Inbox = () => {
 
 	function addMessage(e) {
 		e.preventDefault();
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessage`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					messageBody: messageBody,
-					dateCreatedMessage: dateCreatedMessage,
-					convoItBelongstoId: whichConvoToShowId,
-					senderOfThisMessageId: user.id
-				})
-			}
-		)
-		.then(res => res.json())
-		.then(data => {
-	        Swal.fire(
-	            'Message sent!',
-	            'Nice!',
-	            'success'
-	        )
-	        // console.log("message sent")
-		})
+		setDateCreatedMessage(new Date())
+		if( whichConvoToShowId !== '' ) {
+			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessage`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						messageBody: messageBody,
+						dateCreatedMessage: dateCreatedMessage,
+						convoItBelongstoId: whichConvoToShowId,
+						senderOfThisMessageId: user.id
+					})
+				}
+			)
+			.then(res => res.json())
+			.then(data => {
+		        // Swal.fire(
+		        //     'Message sent!',
+		        //     'Nice!',
+		        //     'success'
+		        // )
+		        // console.log("message sent")
+		        setMessageBody('')
+		        refreshNow()
+			})	
+		} else {
+	        Swal.fire({
+	            icon: 'error',
+	            title: 'Oops...',
+	            text: 'Select a Conversation first!'
+	        })
+		}
+
 	}
 
 	function addConversation(z) {
 		z.preventDefault();
+		setDateCreatedMessage(new Date())
 		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/addConversation`,
 			{
 				method: 'POST',
@@ -572,7 +624,7 @@ const Inbox = () => {
 					},
 					body: JSON.stringify({
 						messageBody: `Successfully added "${data.conversationName}" Conversation`,
-						dateCreatedMessage: dateCreated,
+						dateCreatedMessage: dateCreatedMessage,
 						convoItBelongstoId: data._id,
 						senderOfThisMessageId: user.id
 					})
@@ -582,77 +634,111 @@ const Inbox = () => {
 			.then(data => {
 				// made it empty
 			})
+
+			refreshNow()
+			openOrCloseAddConversation()
 		}) 
 	}
 
 
 	function addContact(g) {
 		g.preventDefault();
-		console.log(contactPersonId)
-		console.log(activeConvo)
+		// console.log(contactPersonId)
+		// console.log(activeConvo)
+		setDateCreatedMessage(new Date())
+
 		if( convoThisContactBelongToId !== '' ) {
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/doesThisContactExistInThisConvo`,
+			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getConversationsThruConvoId`,
 				{
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({
-						contactPersonId: contactPersonId,
-						convoThisContactBelongToId: activeConvo
+						convoItBelongstoId: activeConvo
 					})
 				}
 			)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data)
-				if ( data ) {
+				// console.log(data[0].ownerOfThisConvoId)
+				if( data[0].ownerOfThisConvoId === contactPersonId ) {
 			        Swal.fire({
 			            icon: 'error',
 			            title: 'Oops...',
-			            text: 'Contact already added!'
+			            text: 'You are the Admin of this Conversation!'
 			        })
 				} else {
-					fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/addContact`,
+
+
+
+					fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/doesThisContactExistInThisConvo`,
 						{
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json'
 							},
 							body: JSON.stringify({
-								contactPersonName: contactPersonName,
 								contactPersonId: contactPersonId,
-								convoThisContactBelongToId: convoThisContactBelongToId
+								convoThisContactBelongToId: activeConvo
 							})
 						}
 					)
 					.then(res => res.json())
 					.then(data => {
-				        Swal.fire(
-				            'Added a Contact Successfully!',
-				            'Nice!',
-				            'success'
-				        )
-						fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessageAsReport`,
-							{
-								method: 'POST',
-								headers: {
-									'Content-Type': 'application/json'
-								},
-								body: JSON.stringify({
-									messageBody: `Added a contact named "${data.contactPersonName}" with ID, "${data.contactPersonId}" `,
-									dateCreatedMessage: dateCreated,
-									convoItBelongstoId: convoThisContactBelongToId,
-									senderOfThisMessageId: user.id
+						// console.log(data)
+						if ( data ) {
+					        Swal.fire({
+					            icon: 'error',
+					            title: 'Oops...',
+					            text: 'Contact already added!'
+					        })
+						} else {
+							fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/addContact`,
+								{
+									method: 'POST',
+									headers: {
+										'Content-Type': 'application/json'
+									},
+									body: JSON.stringify({
+										contactPersonName: contactPersonName,
+										contactPersonId: contactPersonId,
+										convoThisContactBelongToId: convoThisContactBelongToId
+									})
+								}
+							)
+							.then(res => res.json())
+							.then(data => {
+						        Swal.fire(
+						            'Added a Contact Successfully!',
+						            'Nice!',
+						            'success'
+						        )
+								fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessageAsReport`,
+									{
+										method: 'POST',
+										headers: {
+											'Content-Type': 'application/json'
+										},
+										body: JSON.stringify({
+											messageBody: `Added a contact named "${data.contactPersonName}" with ID, "${data.contactPersonId}" `,
+											dateCreatedMessage: dateCreatedMessage,
+											convoItBelongstoId: convoThisContactBelongToId,
+											senderOfThisMessageId: user.id
+										})
+									}
+								)
+								.then(res => res.json())
+								.then(data => {
+									// made it empty
+									refreshNow()
 								})
-							}
-						)
-						.then(res => res.json())
-						.then(data => {
-							// made it empty
-						})
 
+							})
+						}
 					})
+
+
 				}
 			})
 		} else {
@@ -694,7 +780,7 @@ const Inbox = () => {
                     text: 'Update Conversation failed!',
                 })
 	    	}
-
+	    	refreshNow()
 	    })
 	}
 
@@ -721,6 +807,18 @@ const Inbox = () => {
 					<h1>Inbox page</h1>
 				</div>
 				<div className="subSecInboxPage-1b">
+					<div>
+						<span><b>Adding a conversation</b></span><br />
+						<span>&nbsp; 1. Click "Add Conversation" located in "Convo you manage".</span><br />
+						<span>&nbsp; 2. Fill the boxes.</span><br />
+						<span>&nbsp; 3. Click "Add now".</span>
+					</div>
+					<div>
+						<span><b>Adding a contact</b></span><br />
+						<span>&nbsp; 1. Choose a Conversation first.(Add first if none)</span><br />
+						<span>&nbsp; 2. Choose users to add in the list under Contacts pane.</span><br />
+						<span>&nbsp; 3. Click "Add Contact" on the bottom of the Contacts pane.</span>
+					</div>
 				</div>
 			</div>
 			<div className="subSecInboxPage-2">
@@ -768,13 +866,23 @@ const Inbox = () => {
 						</div>
 						<div className="subSecInboxPage-2bbb">
 							<div className="subSecInboxPage-2bbba">
-								<span className="subSecInboxPage-2bbba-text01">Contacts</span>
+								<div className="subSecInboxPage-2bbbaa">
+									<span className="subSecInboxPage-2bbba-text01">All Users</span>
+								</div>
+								<div className="subSecInboxPage-2bbbab">
+									{ listOfUsers }
+								</div>
+								<div className="subSecInboxPage-2bbbac">
+									<button className="subSecInboxPage-2bbbc-btn" onClick={(g) => addContact(g)}>Add Contact</button>
+								</div>
 							</div>
 							<div className="subSecInboxPage-2bbbb">
-								{ listOfUsers }
-							</div>
-							<div className="subSecInboxPage-2bbbc">
-								<button className="subSecInboxPage-2bbbc-btn" onClick={(g) => addContact(g)}>Add Contact</button>
+								<div className="subSecInboxPage-2bbbaa">
+									<span className="subSecInboxPage-2bbba-text01">Members</span>
+								</div>
+								<div className="subSecInboxPage-2bbbab">
+									{ listOfContactsInAConvo }
+								</div>
 							</div>
 						</div>
 					</div>

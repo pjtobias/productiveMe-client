@@ -168,6 +168,44 @@ const Dashboard = () => {
 	    	// console.log(data)
 	    	// console.log(a)
 	    })
+
+  		// console.log(user.id)
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksOfUser`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					userId: user.id
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	// console.log(data)
+	    	var a = data.length
+	    	// setTasksOfUser(data)
+	    	getAllTasksCount(a)
+	    	// console.log(allTasksCount)
+	    })
+
+	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					adminId: user.id
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	// console.log(data)
+	    	var a = data.length
+	    	// setTasksOfUser(data)
+	    	getAllProjectsCount(a)
+	    	// console.log(allProjectsCount)
+	    })
+	    
 	})
 
 //-------------------- END data for charts

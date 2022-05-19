@@ -30,10 +30,12 @@ export default function MessageCard ({ messageProp }) {
 
 	useEffect(() => {
 		// console.log(messageProp)
-		const dateAA = moment(dateCreatedMessage, "YYYY-MM-DD")
-		const dateAB = dateAA.format('LLL')
+		const dateAA = moment(dateCreatedMessage)
+		const dateAB = dateAA.format('LLLL')
 		setDateCreatedMessageConverted(dateAB)
 		// console.log(dateCreatedMessageConverted)
+		// console.log(dateAA)
+		// console.log(dateAB)
 
 
 		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/getUser`, {

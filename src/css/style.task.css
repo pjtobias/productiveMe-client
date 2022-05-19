@@ -34,7 +34,10 @@
 
 			.containerForTaskPage-1ba {
 				width: 29%;
-				/*background-color: skyblue;	*/
+
+				display: flex;
+				justify-content: center;
+				/*background-color: skyblue;*/
 			}
 
 			.containerForTaskPage-1bb {

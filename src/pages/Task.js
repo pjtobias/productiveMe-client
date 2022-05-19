@@ -4,6 +4,7 @@ import UserContext from '../UserContext'
 import '../css/style.masterplan.css'
 import '../css/style.task.css'
 import TaskCard from '../components/TaskCard';
+import { IoIosRefresh } from "react-icons/io";
 
 
 const Task = () => {
@@ -458,7 +459,7 @@ const Task = () => {
 					</div>
 					<div className="containerForTaskPage-1b">
 						<div className="containerForTaskPage-1ba">
-							<button className="btnForTaskPage-1bb" onClick={(q) => loadTask(q)}>R</button>
+							<button className="btnForTaskPage-1bb" onClick={(q) => loadTask(q)}><IoIosRefresh /></button>
 						</div>
 						<div className="containerForTaskPage-1bb">
 							<div className="containerForTaskPage-1bba">

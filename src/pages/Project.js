@@ -5,12 +5,14 @@ import DatePicker from 'react-date-picker';
 import '../css/style.masterplan.css'
 import '../css/style.project.css'
 import Popup from 'reactjs-popup';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosRefresh } from "react-icons/io";
 import PropTypes from 'prop-types';
 import Axios from 'axios'
 import ProjectCard from '../components/ProjectCard';
 import styled from 'styled-components';
 import { ModalAddProject } from '../components/ModalAddProject';
+import ModalAddProjectB from '../components/ModalAddProjectB';
+import Swal from 'sweetalert2';
 const moment = require('moment')
 
 
@@ -20,7 +22,6 @@ const Project = () => {
 	const [ value, onChange ] = useState(new Date());
 	const { user } = useContext(UserContext)
 	const [ getProjects, setGetProjects ] = useState([])
-	const [ showModal, setShowModal ] = useState(false);
 
 	const [ listOfActiveProjects, setListOfActiveProjects ] = useState([])
 	const [ listOfDoneProjects, setListOfDoneProjects ] = useState([])
@@ -34,14 +35,75 @@ const Project = () => {
 
 	const [ searchThisName, setSearchThisName ] = useState('')
 
+		// Adding Project //
+	const [ projectName, setProjectName ] = useState('')
+	const [ dateCreated, setDateCreated ] = useState(new Date())
+	const [ dateEnd, setDateEnd ] = useState('')
+	const [ adminId, setAdminId ] = useState('')
 
+
+  
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// for Modal Controls //
+	const [ openAddProjectB, setOpenAddProjectB ] = useState(false)
+	const openOrCloseAddProjectB = () => {
+		setOpenAddProjectB(prev => !prev);
+		setDateEnd('')
+		setProjectName('')
+	};
+
+	const [ showModal, setShowModal ] = useState(false);
 	const openModal = () => {
 		setShowModal(prev => !prev);
 	};
+		// END for Modal Controls //
 
 
-	const loadProject = (q) => {
-		q.preventDefault()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// for refresh of page //
+
+	const [ refresh, setRefresh ] = useState(false)
+	function refreshNow() {
+		setRefresh(prev => !prev);
+	}
+ 	useEffect(() => {
 		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
@@ -89,7 +151,31 @@ const Project = () => {
 	    	// console.log(data)
 	    	setListOfDoneProjects(data)
 	    })
-	}
+	}, [refresh])
+
+		// END for refresh of page //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -412,6 +498,142 @@ const Project = () => {
 // onChange={(e) => setProjectNameToUpdate(e.target.value)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	const onChangeDateEnd = dateEnd => {
+		setDateEnd(dateEnd)
+	}
+
+	function addProject(h) {
+		h.preventDefault();
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/addProject`, 
+		    {
+		        method: 'POST',
+		        headers: {
+		            'Content-Type': 'application/json'
+		        },
+		        body: JSON.stringify({
+		            projectName: projectName,
+		            dateCreated: dateCreated,
+		            dateEnd: dateEnd,
+		            adminId: user.id
+		        })
+		    }
+		)
+		.then(res => res.json())
+		.then(data => {
+		    Swal.fire(
+		        'Added a project Successfully!',
+		        'You can sign-in now!',
+		        'success'
+		    )
+		    openOrCloseAddProjectB()
+		    refreshNow()
+		})
+	}
+
+	const loadProject = (q) => {
+		q.preventDefault()
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					adminId: user.id
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	// console.log(data)
+	    	setGetProjects(data)
+	    })
+
+
+
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllActiveProjects`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					adminId: user.id
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	console.log(data)
+	    	setListOfActiveProjects(data)
+	    })
+
+
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllDoneProjects`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					adminId: user.id
+				})
+	    })
+	    .then(res => res.json())
+	    .then(data => {
+	    	// console.log(data)
+	    	setListOfDoneProjects(data)
+	    })
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return (
 		<React.Fragment>
 		<div className="ContainerForProjectPage">
@@ -420,8 +642,9 @@ const Project = () => {
 					<h1 className="containerForProjectPageHeader-aa">Project page</h1>
 					<div className="containerForProjectPageHeader-ab">
 						<div className="containerForProjectPageHeader-aba">
-							<button className="buttonForProjectPageA"onClick={openModal}>Add project</button>
-							<button className="buttonForProjectPageF"onClick={(q) => loadProject(q)}>R</button>
+							{/*<button className="buttonForProjectPageA" onClick={openModal}>Add project</button>*/}
+							<button className="buttonForProjectPageA" onClick={() => openOrCloseAddProjectB()}>Add project</button>
+							<button className="buttonForProjectPageF" onClick={(q) => loadProject(q)}><IoIosRefresh /></button>
 						</div>
 						<div className="containerForProjectPageHeader-abb">
 							<div className="containerForProjectPageHeader-abba">
@@ -471,17 +694,87 @@ const Project = () => {
 				</div>
 			</div>
 			
+
+
+
+
+
+
+
+
+
+
 			<ModalAddProject showModal={showModal} setShowModal={setShowModal} />
-				{( searchThisName === '' )
+			{( searchThisName === '' )
+				?
+					( firstListToShow === true )
 					?
-						( firstListToShow === true )
-						?
-							<div>{ listOfProjectsAtoz }</div>
-						:
-							<div>{ listToShow }</div>
+						<div>{ listOfProjectsAtoz }</div>
 					:
-						<div>{ searchedName }</div>
-				}
+						<div>{ listToShow }</div>
+				:
+					<div>{ searchedName }</div>
+			}
+
+
+
+
+            <ModalAddProjectB open={openAddProjectB} onClose={() => setOpenAddProjectB(false)}>
+              <div>
+                <div>
+                  <h2>Add project here</h2>
+
+                </div>
+
+                <form onSubmit={(h) => addProject(h)}>
+                    <div>
+                        <label>Project Name</label>
+                        <br />
+                        <input 
+                            type="text" 
+                            placeholder="Enter project" 
+                            // value={email}
+                            onChange={(h) => setProjectName(h.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Date End</label>
+                        <br />
+                        <DatePicker 
+                            onChange={onChangeDateEnd} 
+                            value={dateEnd}
+                        />
+                        <br />
+                        <br />
+                    </div>
+                    <div>
+                      <button className="">Add project</button>
+                      <button className="" onClick={() => openOrCloseAddProjectB(prev => !prev)}>Close</button>
+                    </div>
+                </form>
+              </div>
+            </ModalAddProjectB>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 		</div>
 		</React.Fragment>

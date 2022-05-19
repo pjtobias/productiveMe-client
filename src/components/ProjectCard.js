@@ -18,6 +18,7 @@ const moment = require('moment')
 
 export default function ProjectCard ({ projectProp }) {
 	const { _id, projectName, dateCreated, adminId, dateEnd, isActive } = projectProp
+
 	const { user } = useContext(UserContext)
 	const [ userFirstName, setUserFirstName ] = useState('')
 
