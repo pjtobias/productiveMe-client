@@ -306,22 +306,22 @@
 
 
 
-
-
-
-
-
-
 /* ----------- end Modal for Project Page ------------ */
 
 
 
 
-/* ----------- Modal for Add Project  ------------ */
+
+
+
+
+
+
+/* ----------- Modal for Add Project B  ------------ */
 
 .containerAddProjectBModal {
   width: 30%;
-  height: 25%;
+  height: 29%;
   position: fixed;
   top: 50%;
   left: 50%;  
@@ -340,6 +340,291 @@
   background-color: rgba(0, 0, 0, .7);
   zIndex: 1000;
 }
+
+		.subContAddProjectBModal-header {
+			padding-left: 10px;
+			display: flex;
+			flex-direction: column;
+		}
+
+				.subContAddProjectBModal-header-text01 {
+		      font-family: 'Rowdies', cursive;
+		      font-size: 30px;
+		      color: #6F6FD8;
+		      margin: 0 0 0 10px;
+				}
+
+		.subContAddProjectBModal-body {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+
+			/*background-color: crimson;*/
+		}
+
+        .subContAddProjectBModal-body-text01 {
+          /*font-family: 'Kodchasan', sans-serif;*/
+          font-size: 15px;
+          color: #6F6FD8;
+          /*margin: 0 0 0 10px;*/
+        }
+
+		    .subContAddProjectBModal-body-textbox {
+		      width: 60%;
+		      height: 30px;
+		      margin: 0 0 0 10px;
+		    }
+
+		    .subContAddProjectBModal-body-datePicker {
+		      width: 60%;
+		      height: 30px;
+		      margin: 0 0 0 10px;
+		    }
+
+		    .addProjectBModal-btn-addProject {
+		      width: 40%;
+		      height: 30px;
+
+		      color:  white;
+		      border: none;
+		      border-radius: 50px;
+		      background-color: #6F6FD8;
+		    }
+
+		    .addProjectBModal-btn-addProject:hover {
+		      color: #6F6FD8;
+		      border: 2px solid #6F6FD8;
+		      border-radius: 50px;
+		      background-color: white;
+		    }
+
+		.subContAddProjectBModal-footer {
+			margin-top: 10px;
+			padding-top: 20px;
+			border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+			display: flex;
+			flex-direction: row;
+			justify-content: right;
+		}
+
+		    .addProjectBModal-btn-close {
+		      width: 20%;
+		      height: 30px;
+
+		      color:  white;
+		      border: none;
+		      border-radius: 50px;
+		      background-color: #6F6FD8;
+		    }
+
+		    .addProjectBModal-btn-close:hover {
+		      color: #6F6FD8;
+		      border: 2px solid #6F6FD8;
+		      border-radius: 50px;
+		      background-color: white;
+		    }
+
+
+/* ----------- end Modal for Add Project B  ------------ */
+
+
+
+/* ----------- Table of list of Tasks  ------------ */
+
+.containerTasksListInProjectPage {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/*background: crimson;*/
+}
+
+		.tableTaskListProjectPage-btn {
+			background: #89A6FB;
+			color: #fff;
+			border: 0;
+			/*padding: 8px;*/
+			/*padding: auto;*/
+			border-radius: 10px;
+			width:  300px;
+			height:  17px;
+			cursor: pointer;
+			font-size: 12px;
+			/*margin: 1px 0 1px 0;*/
+		}
+		
+		.tableTaskListProjectPage {
+		  font-family: Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  width: 70%;
+		}
+
+				.tableTaskListProjectPage td, .tableTaskListProjectPage th {
+				  border: 1px solid #ddd;
+				  padding: 8px;
+				}
+
+				.tableTaskListProjectPage tr:nth-child(even){background-color: #f2f2f2;}
+
+				.tableTaskListProjectPage tr:hover {background-color: #ddd;}
+
+				.tableTaskListProjectPage th {
+				  padding-top: 12px;
+				  padding-bottom: 12px;
+				  text-align: left;
+				  background-color: #89A6FB;
+				  color: white;
+				}
+
+						.actionBtn {
+							background: #89A6FB;
+							color: #fff;
+							border: 0;
+							/*padding: 8px;*/
+							/*padding: auto;*/
+							border-radius: 10px;
+							width:  70px;
+							height:  25px;
+							cursor: pointer;
+							font-size: 12px;
+							/*margin: 1px 0 1px 0;*/
+						}
+
+
+/* ----------- end Table of list of Tasks  ------------ */
+
+
+
+
+/* ----------- Modal for Add Project  ------------ */
+
+.containerUpdateTaskForPPModal {
+  width: 30%;
+  height: 28%;
+  position: fixed;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 30px;
+  zIndex: 1000;
+}
+    /*ModalAddConversation.js*/
+.overlayBgUpdateTaskForPPModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  zIndex: 1000;
+}
+
+
+
+
+		.subContUpdateTaskForPPModal-header {
+			padding-left: 10px;
+			display: flex;
+			flex-direction: column;
+		}
+
+				.subContUpdateTaskForPPModal-header-text01 {
+		      font-family: 'Rowdies', cursive;
+		      font-size: 30px;
+		      color: #6F6FD8;
+		      margin: 0 0 0 10px;
+				}
+
+		.subContUpdateTaskForPPModal-body {
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+
+			/*background-color: crimson;*/
+		}
+				.subContUpdateTaskForPPModal-body-a {
+					width: 60%;
+				}
+
+				.subContUpdateTaskForPPModal-body-b {
+					width: 20%;
+				}
+
+        .subContUpdateTaskForPPModal-body-text01 {
+          /*font-family: 'Kodchasan', sans-serif;*/
+          font-size: 15px;
+          color: #6F6FD8;
+          /*margin: 0 0 0 10px;*/
+        }
+
+		    .subContUpdateTaskForPPModal-body-textbox {
+		      width: 95%;
+		      height: 30px;
+		      margin: 0 0 0 10px;
+		    }
+
+				.subContUpdateTaskForPPModal-statusBtns {
+					padding-left: 20px;
+					display: flex;
+					flex-direction: column;
+				}
+
+		    .updateTaskForPPModal-btn {
+		      width: 20%;
+		      height: 30px;
+
+		      color:  white;
+		      border: none;
+		      border-radius: 50px;
+		      background-color: #6F6FD8;
+		    }
+
+		    .updateTaskForPPModal-btn:hover {
+		      color: #6F6FD8;
+		      border: 2px solid #6F6FD8;
+		      border-radius: 50px;
+		      background-color: white;
+		    }
+
+		.subContUpdateTaskForPPModal-footer {
+			margin-top: 10px;
+			padding-top: 20px;
+			border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+			display: flex;
+			flex-direction: row;
+			justify-content: right;
+		}
+
+		    .updateTaskForPPModal-btn-updateTask {
+		      width: 80%;
+		      height: 30px;
+		      margin-top: 10px;
+
+		      color:  white;
+		      border: none;
+		      border-radius: 50px;
+		      background-color: #6F6FD8;
+		    }
+
+		    .updateTaskForPPModal-btn-updateTask:hover {
+		      color: #6F6FD8;
+		      border: 2px solid #6F6FD8;
+		      border-radius: 50px;
+		      background-color: white;
+		    }
 
 
 /* ----------- end Modal for Add Project  ------------ */

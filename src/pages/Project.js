@@ -391,6 +391,8 @@ const Project = () => {
 		)
 	})
 
+
+
 	
 
 
@@ -534,30 +536,39 @@ const Project = () => {
 
 	function addProject(h) {
 		h.preventDefault();
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/addProject`, 
-		    {
-		        method: 'POST',
-		        headers: {
-		            'Content-Type': 'application/json'
-		        },
-		        body: JSON.stringify({
-		            projectName: projectName,
-		            dateCreated: dateCreated,
-		            dateEnd: dateEnd,
-		            adminId: user.id
-		        })
-		    }
-		)
-		.then(res => res.json())
-		.then(data => {
-		    Swal.fire(
-		        'Added a project Successfully!',
-		        'You can sign-in now!',
-		        'success'
-		    )
-		    openOrCloseAddProjectB()
-		    refreshNow()
-		})
+		if( dateEnd === '') {
+	        Swal.fire({
+	            icon: 'error',
+	            title: 'Oops...',
+	            text: 'No Date Entered!',
+	        })
+		} else {
+			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/addProject`, 
+			    {
+			        method: 'POST',
+			        headers: {
+			            'Content-Type': 'application/json'
+			        },
+			        body: JSON.stringify({
+			            projectName: projectName,
+			            dateCreated: dateCreated,
+			            dateEnd: dateEnd,
+			            adminId: user.id
+			        })
+			    }
+			)
+			.then(res => res.json())
+			.then(data => {
+			    Swal.fire(
+			        'Added a project Successfully!',
+			        'You can sign-in now!',
+			        'success'
+			    )
+			    openOrCloseAddProjectB()
+			    refreshNow()
+			})
+		}
+
 	}
 
 	const loadProject = (q) => {
@@ -720,17 +731,18 @@ const Project = () => {
 
 
             <ModalAddProjectB open={openAddProjectB} onClose={() => setOpenAddProjectB(false)}>
-              <div>
-                <div>
-                  <h2>Add project here</h2>
+
+                <div className="subContAddProjectBModal-header">
+                  <span className="subContAddProjectBModal-header-text01">Add project here</span>
 
                 </div>
 
-                <form onSubmit={(h) => addProject(h)}>
+                <form className="subContAddProjectBModal-body" onSubmit={(h) => addProject(h)}>
                     <div>
-                        <label>Project Name</label>
+                        <span className="subContAddProjectBModal-body-text01">Project Name</span>
                         <br />
                         <input 
+                        	className="subContAddProjectBModal-body-textbox"
                             type="text" 
                             placeholder="Enter project" 
                             // value={email}
@@ -739,9 +751,10 @@ const Project = () => {
                         />
                     </div>
                     <div>
-                        <label>Date End</label>
+                        <span className="subContAddProjectBModal-body-text01">Date End</span>
                         <br />
                         <DatePicker 
+                        	className="subContAddProjectBModal-body-datePicker"
                             onChange={onChangeDateEnd} 
                             value={dateEnd}
                         />
@@ -749,11 +762,15 @@ const Project = () => {
                         <br />
                     </div>
                     <div>
-                      <button className="">Add project</button>
-                      <button className="" onClick={() => openOrCloseAddProjectB(prev => !prev)}>Close</button>
+                      <button className="addProjectBModal-btn-addProject">Add project</button>
+                      
                     </div>
                 </form>
-              </div>
+
+                <div className="subContAddProjectBModal-footer">
+                	<button className="addProjectBModal-btn-close" onClick={() => openOrCloseAddProjectB(prev => !prev)}>Close</button>
+                </div>
+
             </ModalAddProjectB>
 
 
