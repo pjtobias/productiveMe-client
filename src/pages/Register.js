@@ -36,7 +36,7 @@ const Register = () => {
 					if(contactNo.length === 11) {
 						if(( pw !== '' && pwB !== '' ) && ( pw === pwB )) {
 							console.log("isThisEmailExists step")
-							fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/isThisEmailExists`, 
+							fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/isThisEmailExists`, 
 								{
 									method: 'POST',
 									headers: {
@@ -50,7 +50,7 @@ const Register = () => {
 							.then(res => res.json())
 							.then(data => {
 								if (data === false) {
-									fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/addUser`,
+									fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/addUser`,
 										{
 											method: 'POST',
 											headers: {

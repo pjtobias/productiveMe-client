@@ -47,7 +47,7 @@ export default function TaskCard ({ taskProp }) {
 	}, [])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getSpecificTask`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getSpecificTask`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ export default function TaskCard ({ taskProp }) {
 
 	function updateTask(e) {
 		e.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateTask`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateTask`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -124,7 +124,7 @@ export default function TaskCard ({ taskProp }) {
 
 	function updateStatusToPending(a) {
 		a.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToPending`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToPending`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -156,7 +156,7 @@ export default function TaskCard ({ taskProp }) {
 
 	function updateStatusToOngoing(b) {
 		b.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToOngoing`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToOngoing`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ export default function TaskCard ({ taskProp }) {
 
 	function updateStatusToDone(c) {
 		c.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToDone`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToDone`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'

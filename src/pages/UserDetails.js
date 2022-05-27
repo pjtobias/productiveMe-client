@@ -19,7 +19,7 @@ const UserDetails = () => {
 	// console.log(user.id)
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/details`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/details`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -42,7 +42,7 @@ const UserDetails = () => {
 		e.preventDefault();
 		if ((firstName !== '') && (lastName !== '') && (contactNo !== '') && (email !== '')) {
 			if ((contactNo.length === 11) && (isNumeric(contactNo))) {
-				fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/updateUser`, {
+				fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/updateUser`, {
 					method: 'PUT',
 					headers: {
 						'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const UserDetails = () => {
 
 	function updatePw(f) {
 		f.preventDefault();
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/updatePw`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/updatePw`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',

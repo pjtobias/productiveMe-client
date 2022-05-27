@@ -104,7 +104,7 @@ const Project = () => {
 		setRefresh(prev => !prev);
 	}
  	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -121,7 +121,7 @@ const Project = () => {
 
 
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllActiveProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllActiveProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -137,7 +137,7 @@ const Project = () => {
 	    })
 
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllDoneProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllDoneProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -422,7 +422,7 @@ const Project = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllActiveProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllActiveProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -439,7 +439,7 @@ const Project = () => {
 	}, [])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllDoneProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllDoneProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -461,7 +461,7 @@ const Project = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -486,7 +486,7 @@ const Project = () => {
 // ------------- This also WORKS -------------
 	// useEffect(() => {
 	// 	console.log(user.id)
-	// 	Axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+	// 	Axios.post(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 	// 		 adminId: user.id 
 	// 	})
 	// 		.then((response) => {
@@ -543,7 +543,7 @@ const Project = () => {
 	            text: 'No Date Entered!',
 	        })
 		} else {
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/addProject`, 
+			fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/addProject`, 
 			    {
 			        method: 'POST',
 			        headers: {
@@ -573,7 +573,7 @@ const Project = () => {
 
 	const loadProject = (q) => {
 		q.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -590,7 +590,7 @@ const Project = () => {
 
 
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllActiveProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllActiveProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -606,7 +606,7 @@ const Project = () => {
 	    })
 
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllDoneProjects`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllDoneProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

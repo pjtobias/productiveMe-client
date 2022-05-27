@@ -28,7 +28,7 @@ const Task = () => {
 
 	const loadTask = (q) => {
 		q.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksOfUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksOfUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ const Task = () => {
 	    	setUserTasks(data)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllPendingTasks`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllPendingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const Task = () => {
 	    	// console.log(data)
 	    })
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllOngoingTasks`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllOngoingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ const Task = () => {
 	    	// console.log(data)
 	    })
 
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllDoneTasks`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllDoneTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -371,7 +371,7 @@ const Task = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksOfUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksOfUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -388,7 +388,7 @@ const Task = () => {
 	}, [])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllPendingTasks`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllPendingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -405,7 +405,7 @@ const Task = () => {
 	}, [])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllOngoingTasks`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllOngoingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -422,7 +422,7 @@ const Task = () => {
 	}, [])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllDoneTasks`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllDoneTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

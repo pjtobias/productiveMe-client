@@ -412,7 +412,7 @@ const Inbox = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getConversationsThruAdminId`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/getConversationsThruAdminId`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -432,7 +432,7 @@ const Inbox = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getAllConversation`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/getAllConversation`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'
@@ -448,7 +448,7 @@ const Inbox = () => {
 
 	useEffect(() => {
 		// console.log(whichConvoToShowId)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/getMessagesThruConvoId`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/messages/getMessagesThruConvoId`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -466,7 +466,7 @@ const Inbox = () => {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/getAllUsers`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/getAllUsers`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'
@@ -481,7 +481,7 @@ const Inbox = () => {
 
 	useEffect(() => {
 		// console.log()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/getListOfConvoIdsThruContactPersonId`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/contacts/getListOfConvoIdsThruContactPersonId`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -497,7 +497,7 @@ const Inbox = () => {
 
 			// for (let i = 0; i < data.length; i++) {
 				// console.log(data[0].convoThisContactBelongToId)
-				fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getConversationsThruConvoId`, {
+				fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/getConversationsThruConvoId`, {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json'
@@ -516,7 +516,7 @@ const Inbox = () => {
 	}, [refresh])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/getListContactInAConvo`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/contacts/getListContactInAConvo`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -557,7 +557,7 @@ const Inbox = () => {
 		e.preventDefault();
 		setDateCreatedMessage(new Date())
 		if( whichConvoToShowId !== '' ) {
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessage`,
+			fetch(`${process.env.REACT_PUBLIC_API_URL}/api/messages/addMessage`,
 				{
 					method: 'POST',
 					headers: {
@@ -595,7 +595,7 @@ const Inbox = () => {
 	function addConversation(z) {
 		z.preventDefault();
 		setDateCreatedMessage(new Date())
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/addConversation`,
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/addConversation`,
 			{
 				method: 'POST',
 				headers: {
@@ -616,7 +616,7 @@ const Inbox = () => {
 	            'success'
 	        )
 
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessageAsReport`,
+			fetch(`${process.env.REACT_PUBLIC_API_URL}/api/messages/addMessageAsReport`,
 				{
 					method: 'POST',
 					headers: {
@@ -648,7 +648,7 @@ const Inbox = () => {
 		setDateCreatedMessage(new Date())
 
 		if( convoThisContactBelongToId !== '' ) {
-			fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/getConversationsThruConvoId`,
+			fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/getConversationsThruConvoId`,
 				{
 					method: 'POST',
 					headers: {
@@ -672,7 +672,7 @@ const Inbox = () => {
 
 
 
-					fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/doesThisContactExistInThisConvo`,
+					fetch(`${process.env.REACT_PUBLIC_API_URL}/api/contacts/doesThisContactExistInThisConvo`,
 						{
 							method: 'POST',
 							headers: {
@@ -694,7 +694,7 @@ const Inbox = () => {
 					            text: 'Contact already added!'
 					        })
 						} else {
-							fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/addContact`,
+							fetch(`${process.env.REACT_PUBLIC_API_URL}/api/contacts/addContact`,
 								{
 									method: 'POST',
 									headers: {
@@ -714,7 +714,7 @@ const Inbox = () => {
 						            'Nice!',
 						            'success'
 						        )
-								fetch(`${process.env.REACT_APP_BACKEND_URL}/api/messages/addMessageAsReport`,
+								fetch(`${process.env.REACT_PUBLIC_API_URL}/api/messages/addMessageAsReport`,
 									{
 										method: 'POST',
 										headers: {
@@ -754,7 +754,7 @@ const Inbox = () => {
 
 	function updateConversation(y) {
 		y.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/conversations/updateConversation`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/conversations/updateConversation`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'

@@ -24,7 +24,7 @@ const Masterplan = () => {
 	const [ firstName, setFirstName ] = useState('')
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/getUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/getUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

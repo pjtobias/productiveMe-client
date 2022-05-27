@@ -103,7 +103,7 @@ export const ModalAddProject = ({ showModal, setShowModal }) => {
 
   function addProject(e) {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/addProject`, 
+    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/addProject`, 
         {
             method: 'POST',
             headers: {

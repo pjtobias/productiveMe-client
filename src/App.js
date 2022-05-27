@@ -1,9 +1,7 @@
 // import logo from './logo.svg';
 import React, { useEffect, useState } from 'react'
-import styles from './css/style.module.css'
 import Navbar from './components/Navbar'
 import { UserProvider } from './UserContext'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 // import io from 'socket.io-client'
@@ -20,7 +18,7 @@ export default function App() {
     })
 
     useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/users/details`, {
+        fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/details`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }

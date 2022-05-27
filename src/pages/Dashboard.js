@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   	useEffect(() => {
   		// console.log(user.id)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksOfUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksOfUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const Dashboard = () => {
 	    	// console.log(allTasksCount)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -87,7 +87,7 @@ const Dashboard = () => {
   	
 //-------------------- data for charts
 	useEffect(() => {
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllPendingTasks`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllPendingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ const Dashboard = () => {
 	    	// console.log(a)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllOngoingTasks`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllOngoingTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ const Dashboard = () => {
 	    	// console.log(a)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getAllDoneTasks`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getAllDoneTasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ const Dashboard = () => {
 	    	// console.log(a)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllActiveProjects`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllActiveProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -152,7 +152,7 @@ const Dashboard = () => {
 	  //   	console.log(a)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getAllDoneProjects`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getAllDoneProjects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -170,7 +170,7 @@ const Dashboard = () => {
 	    })
 
   		// console.log(user.id)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksOfUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksOfUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ const Dashboard = () => {
 	    	// console.log(allTasksCount)
 	    })
 
-	    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getProject`, {
+	    fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

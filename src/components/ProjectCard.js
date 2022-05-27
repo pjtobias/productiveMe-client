@@ -91,7 +91,7 @@ export default function ProjectCard ({ projectProp }) {
 	const [ openUpdateTask, setOpenUpdateTask ] = useState(false)
 	const openOrCloseOpenUpdateTask = (taskId) => {
 		setOpenUpdateTask(prev => !prev);
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getSpecificTask`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getSpecificTask`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ export default function ProjectCard ({ projectProp }) {
 	})
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksThruProjectId`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksThruProjectId`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -206,7 +206,7 @@ export default function ProjectCard ({ projectProp }) {
 
 
 	function refreshTasksList() {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/getTasksThruProjectId`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/getTasksThruProjectId`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -249,7 +249,7 @@ export default function ProjectCard ({ projectProp }) {
 
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/getSpecificProject`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/getSpecificProject`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -265,7 +265,7 @@ export default function ProjectCard ({ projectProp }) {
 	}, [openUpdatePortion])
 
 	useEffect(() => {
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/getAllUsers`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/getAllUsers`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'
@@ -280,7 +280,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	useEffect(() => {
 		// console.log(user.id)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/users/getUser`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/getUser`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -408,7 +408,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	function updateProject(e) {
 		e.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/updateProject`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/updateProject`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -449,7 +449,7 @@ export default function ProjectCard ({ projectProp }) {
 		// console.log(userAssignedInThisTaskId)
 		// console.log(user.id)
 		// console.log('dito na ko')
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/addTask`, 
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/addTask`, 
 			{
 				method: 'POST',
 				headers: {
@@ -493,7 +493,7 @@ export default function ProjectCard ({ projectProp }) {
 	function updateIsActiveToFalse(a) {
 		a.preventDefault()
 		// console.log(isActiveToFalse)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/updateIsActiveToFalse`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/updateIsActiveToFalse`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -526,7 +526,7 @@ export default function ProjectCard ({ projectProp }) {
 	function updateIsActiveToTrue(b) {
 		b.preventDefault()
 		// console.log(isActiveToTrue)
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/updateIsActiveToTrue`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/updateIsActiveToTrue`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -570,7 +570,7 @@ export default function ProjectCard ({ projectProp }) {
 			confirmButtonText: 'Yes, delete it!'
 		}).then((result) => {
 		    if (result.isConfirmed) {
-				fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects/deleteProject`, {
+				fetch(`${process.env.REACT_PUBLIC_API_URL}/api/projects/deleteProject`, {
 						method: 'DELETE',
 						headers: {
 							'Content-Type': 'application/json'
@@ -603,7 +603,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	function updateTask(h) {
 		h.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateTask`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateTask`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -639,7 +639,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	function updateStatusToPending(h) {
 		h.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToPending`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToPending`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -675,7 +675,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	function updateStatusToOngoing(h) {
 		h.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToOngoing`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToOngoing`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -711,7 +711,7 @@ export default function ProjectCard ({ projectProp }) {
 
 	function updateStatusToDone(h) {
 		h.preventDefault()
-		fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/updateStatusToDone`, {
+		fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/updateStatusToDone`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -757,7 +757,7 @@ export default function ProjectCard ({ projectProp }) {
 			confirmButtonText: 'Yes, delete it!'
 		}).then((result) => {
 		    if (result.isConfirmed) {
-				fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tasks/deleteTask`, {
+				fetch(`${process.env.REACT_PUBLIC_API_URL}/api/tasks/deleteTask`, {
 						method: 'DELETE',
 						headers: {
 							'Content-Type': 'application/json'
