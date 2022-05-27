@@ -4,7 +4,7 @@ import ChatBubbleForSocket from "../components/ChatBubbleForSocket";
 import io from 'socket.io-client'
 
 import { nanoid } from "nanoid";
-const socket = io.connect(REACT_PUBLIC_API_URL);
+const socket = io.connect(process.env.REACT_PUBLIC_API_URL);
 const userNanoId = nanoid(4)
 
 
