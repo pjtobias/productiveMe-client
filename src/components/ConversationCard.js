@@ -12,9 +12,11 @@ export default function ConversionCard ({ conversationProp }) {
 
 
 	return (
-		<div>
-			<span className="conversationCard-text01">{conversationName}</span>
-		</div>
+		<React.Fragment>
+			<div>
+				<span className="conversationCard-text01">{conversationName}</span>
+			</div>
+		</React.Fragment>
 	)
 }
 
