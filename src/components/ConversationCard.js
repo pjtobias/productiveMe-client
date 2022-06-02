@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import '../css/style.masterplan.css'
 import '../css/style.inbox.css'
+import React from 'react'
 
 
 
