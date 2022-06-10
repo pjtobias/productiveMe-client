@@ -28,7 +28,7 @@ const SignIn = () => {
         e.preventDefault();
 
 
-        fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/signIn`, 
+        fetch(`/api/users/signIn`, 
         	{
 	            method: 'POST',
 	            headers: {
@@ -75,7 +75,7 @@ const SignIn = () => {
     const retrieveUserDetails = (accessToken) => {
         	// console.log("andito na ko")
         	// console.log(accessToken)
-        fetch(`${process.env.REACT_PUBLIC_API_URL}/api/users/details`,
+        fetch(`/api/users/details`,
         	{
 				headers: { Authorization: `Bearer ${ accessToken }`}
 			}
